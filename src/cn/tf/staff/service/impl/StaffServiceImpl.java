@@ -84,4 +84,12 @@ public class StaffServiceImpl implements StaffService{
 		 staffDao.update(crmStaff);
 	}
 
+
+	@Override
+	public void register(CrmStaff crmStaff) {
+		// TODO Auto-generated method stub
+		crmStaff.setLoginPwd(MD5Util.getMD5Value(crmStaff.getLoginPwd()));
+		staffDao.add(crmStaff);
+	}
+
 }

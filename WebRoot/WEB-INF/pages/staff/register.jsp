@@ -32,6 +32,10 @@ FONT-SIZE: 12px; COLOR: #4b4b4b; LINE-HEIGHT: 18px; TEXT-DECORATION: none
 <TITLE></TITLE>
 <META http-equiv=Content-Type content="text/html; charset=utf-8">
 <LINK href="${pageContext.request.contextPath}/css/style.css" type=text/css rel=stylesheet>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/easyui.css">  
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/icon.css">  
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.7.2.min.js"></script>  
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.easyui.min.js"></script>  
 </SCRIPT>
 <META content="MSHTML 6.00.2600.0" name=GENERATOR></HEAD>
 <BODY leftMargin=0 topMargin=0 marginwidth="0" marginheight="0" background="${pageContext.request.contextPath}/images/rightbg.jpg">
@@ -44,7 +48,7 @@ FONT-SIZE: 12px; COLOR: #4b4b4b; LINE-HEIGHT: 18px; TEXT-DECORATION: none
 		<tr>
 			<td background="${pageContext.request.contextPath}/images/right.jpg"  width="740" height="412"></td>
 			<td class="login_msg" width="400">
-				<form class="login_msg_field" action="${pageContext.request.contextPath}/html/frame.html">
+				<form class="login_msg_field" action="${pageContext.request.contextPath}/staffAction_register">
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="register_title">新用户注册</span><br/><br/>
 					用&nbsp;&nbsp;户&nbsp;&nbsp;名：<input class="msg" type="text"><br/><br/>
 					密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：<input class="msg" type="password"><br/><br/>

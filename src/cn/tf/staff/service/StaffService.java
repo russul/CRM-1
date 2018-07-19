@@ -17,4 +17,6 @@ public interface StaffService {
 	//更新
 	public void updateStaff(CrmStaff crmStaff);
 
+	public void register(CrmStaff crmStaff);
+
 }

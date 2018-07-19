@@ -19,6 +19,7 @@
         <set name="crmStaffs" inverse="true">
             <key>
                 <column name="postID" length="50" />
+                
             </key>
             <one-to-many class="cn.tf.staff.domain.CrmStaff" />
         </set>

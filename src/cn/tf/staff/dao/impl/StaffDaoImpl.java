@@ -73,6 +73,12 @@ public class StaffDaoImpl extends HibernateDaoSupport implements StaffDao{
 		
 	}
 
+	@Override
+	public void add(CrmStaff crmStaff) {
+		// TODO Auto-generated method stub
+		this.getHibernateTemplate().save(crmStaff);
+	}
+
 	
 	
 

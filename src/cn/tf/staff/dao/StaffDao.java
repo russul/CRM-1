@@ -17,4 +17,8 @@ public interface StaffDao {
 
 	void update(CrmStaff crmStaff);
 
+	void add(CrmStaff crmStaff);
+
+	
+
 }

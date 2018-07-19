@@ -106,7 +106,12 @@ public class StaffAction  extends ActionSupport implements ModelDriven<CrmStaff>
 		
 	}
 	
-	
+	//注册
+	public String register() {
+		
+		staffService.register(crmStaff);
+		return "login";
+	}
 	
 	//显示添加页面
 	public String addUI(){
@@ -163,5 +168,7 @@ public class StaffAction  extends ActionSupport implements ModelDriven<CrmStaff>
 		return "loginUI";
 	}
 	
-
+	public String registerUI(){
+		return "registerUI";
+	}
 }

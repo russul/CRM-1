@@ -48,7 +48,7 @@
 									<td width="189">
 										<font color="#ffffff">今天是：
 										<script language="JavaScript">
-												<!--
+												//<!--
 													tmpDate = new Date();
 													date = tmpDate.getDate();
 													month = tmpDate.getMonth() + 1;

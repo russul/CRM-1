@@ -5,7 +5,7 @@
        xmlns:aop="http://www.springframework.org/schema/aop"
        xmlns:tx="http://www.springframework.org/schema/tx"
        xsi:schemaLocation="http://www.springframework.org/schema/beans 
-       					   http://www.springframework.org/schema/beans/spring-beans.xsd
+       					   http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
        					   http://www.springframework.org/schema/context 
        					   http://www.springframework.org/schema/context/spring-context.xsd
        					   http://www.springframework.org/schema/aop 
@@ -35,6 +35,7 @@
 				<prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
 				<prop key="hibernate.show_sql">true</prop>
 				<prop key="hibernate.format_sql">true</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
 				<prop key="javax.persistence.validation.mode">none</prop>
 			</props>
 		</property>
@@ -52,6 +53,7 @@
 			<tx:method name="add*"/>
 			<tx:method name="update*"/>
 			<tx:method name="delete*"/>
+			<tx:method name="register*"/>
 			<tx:method name="find*" read-only="true"/>
 			<tx:method name="*" read-only="true"/>
 		</tx:attributes>
