@@ -8,9 +8,9 @@
     <!-- struts标签模板 -->
     <constant name="struts.ui.theme" value="simple"></constant>
 
-    <package name="staff" namespace="/" extends="common">
+    <package name="staff" namespace="/" extends="common,json-default">
 			<!-- 员工 -->
-			<action name="staffAction_*"  class="cn.tf.staff.action.StaffAction"  method="{1}" >
+			<action name="staffAction_*"  class="staffAction"  method="{1}" >
 				<result  name="loginUI">/WEB-INF/pages/login.jsp</result>
 				<result name="login_success"  type="redirectAction">
 						<param name="namespace">/</param>
@@ -33,7 +33,18 @@
 				<result name="updatePwd">/WEB-INF/pages/staff/success.html</result>
 				<result name="logout">/WEB-INF/pages/login.jsp</result>
 				<result name="registerUI">/WEB-INF/pages/staff/register.jsp</result>
+				<!--这里必须借助action进行重定向，因为单纯的重定向路径属于客户端路径访问不了wen-inf文件夹下的资源  -->
+				<result name="register_success"  type="redirectAction">
+						<param name="namespace">/</param>
+						<param name="actionName">staffAction_loginUI</param>
+				</result>
 			</action> 
 			
+		 <action name="JsonAction_*" class="cn.tf.staff.action.JsonAction" method="{1}">
+		 	
+		 	 <result name="success" type="json">
+		 		<param name="root">infoJson</param>
+		 	</result> 
+		 </action>			
     </package>
 </struts>

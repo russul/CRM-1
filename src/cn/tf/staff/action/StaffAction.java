@@ -1,9 +1,18 @@
 package cn.tf.staff.action;
 
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
+import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
+import javax.annotation.Resource;
 import javax.security.auth.message.callback.PrivateKeyCallback.Request;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
+import org.apache.struts2.ServletActionContext;
 import org.hibernate.Session;
 import org.springframework.beans.BeanUtils;
 
@@ -14,6 +23,7 @@ import cn.tf.post.domain.CrmPost;
 import cn.tf.post.service.PostService;
 import cn.tf.staff.domain.CrmStaff;
 import cn.tf.staff.service.StaffService;
+import cn.tf.staff.service.impl.StaffServiceImpl;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
@@ -23,6 +33,11 @@ public class StaffAction  extends ActionSupport implements ModelDriven<CrmStaff>
 	
 	private CrmStaff crmStaff=new CrmStaff();
 	private StaffService staffService;
+	public StaffService getStaffService() {
+		return staffService;
+	}
+	
+	
 	private DepartmentService  departmentService;
 	private PostService postService;
 	
@@ -108,9 +123,11 @@ public class StaffAction  extends ActionSupport implements ModelDriven<CrmStaff>
 	
 	//注册
 	public String register() {
-		
+		crmStaff.setStaffCode("default");
+		crmStaff.setOnDutyDate(new Date(118,7,19));
+//		crmStaff.setPostId("default");
 		staffService.register(crmStaff);
-		return "login";
+		return "register_success";
 	}
 	
 	//显示添加页面
@@ -156,6 +173,8 @@ public class StaffAction  extends ActionSupport implements ModelDriven<CrmStaff>
 		
 		return "findAll";
 	}
+	
+
 	
 	@Override
 	public CrmStaff getModel() {

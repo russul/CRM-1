@@ -22,6 +22,7 @@ public class CrmStaff implements java.io.Serializable {
 	private String gender;
 	private Date birthday;
 	private Date onDutyDate;
+
 	public String getStaffId() {
 		return staffId;
 	}
@@ -93,6 +94,8 @@ public class CrmStaff implements java.io.Serializable {
 	public CrmStaff() {
 		super();
 	}
+
+
 
 	
 

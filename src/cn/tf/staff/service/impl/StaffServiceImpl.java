@@ -92,4 +92,11 @@ public class StaffServiceImpl implements StaffService{
 		staffDao.add(crmStaff);
 	}
 
+
+	@Override
+	public List<String> findByName(String name) {
+		// TODO Auto-generated method stub
+		return staffDao.findByName(name);
+	}
+
 }

@@ -19,6 +19,8 @@ public interface StaffDao {
 
 	void add(CrmStaff crmStaff);
 
+	List<String> findByName(String name);
+
 	
 
 }

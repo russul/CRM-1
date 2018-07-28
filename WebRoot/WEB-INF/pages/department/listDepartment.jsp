@@ -62,6 +62,8 @@
 <table border="0" cellspacing="0" cellpadding="0" align="center">
   <tr>
     <td align="right">
+    <!-- 自定义标签 -->
+    <!-- 借助自定义标签page封装了实现分页的底部链接以及跳转部分，这部分也可以自己用已有的HTML标签实现 -->
     	<p:page url="${pageContext.request.contextPath}/departmentAction_findAll" data="${pageBean}" />
     </td>
   </tr>

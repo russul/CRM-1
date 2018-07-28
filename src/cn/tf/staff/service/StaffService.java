@@ -19,4 +19,6 @@ public interface StaffService {
 
 	public void register(CrmStaff crmStaff);
 
+	public List<String> findByName(String name);
+
 }
